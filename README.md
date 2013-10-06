@@ -1,14 +1,19 @@
-# Form Storm Norm Perform
+# Git
 *Présentation pour l'APP ISEP 2013*
 
 Sources:
-+ [changingminds.org](http://changingminds.org/explanations/groups/form_storm_norm_perform.htm)
-+ [Wikipedia:Tuckman's stages of group development](http://en.wikipedia.org/wiki/Tuckman's_stages_of_group_development)
-+ [Wikipedia:Bruce Tuckman](http://en.wikipedia.org/wiki/Bruce_Tuckman)
+Très inspiré de [cette présentation](http://blog.dbrgn.ch/2013/2/7/git-introduction-presentation-slides/) de [Danilo Bargen](http://blog.dbrgn.ch/about/)
+
++ ["Pro Git" Book](http://goo.gl/jX95vy)
++ [Git reference](http://goo.gl/eJODp8)
++ [Github git challenges](http://goo.gl/mJJUXn)
++ [Cheat sheet](http://goo.gl/942WZ8)
++ [Use svn from git](http://goo.gl/1HhWKL)
++ [Commands git vs svn](http://goo.gl/AE1STW)
 
 Réalisé avec [reveal.js](https://github.com/hakimel/reveal.js)
 
----
+<!-- ---
 ## Comment visualiser la présentation ?
 + Solution simple : [http://p-j.github.io/isep-fsnp/](http://p-j.github.io/isep-fsnp/)
   + Une fois sur la page, appuyé sur `S` pour voir les notes du présentateur 
@@ -38,7 +43,7 @@ Réalisé avec [reveal.js](https://github.com/hakimel/reveal.js)
   + Puis naviguez vers [http://localhost:8000](http://localhost:8000) pour voir la présentation
 
 D'avantage d'information sur comment utiliser [reveal.js](https://github.com/hakimel/reveal.js) sont disponibles sur le dépôt officiel [hakimel/reveal.js](https://github.com/hakimel/reveal.js) (en anglais).
-
+ -->
 ## License
 MIT licensed
 
