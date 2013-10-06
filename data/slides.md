@@ -464,5 +464,4 @@ Très inspiré de [cette présentation](http://blog.dbrgn.ch/2013/2/7/git-introd
 + [Git reference](http://goo.gl/eJODp8)
 + [Github git challenges](http://goo.gl/mJJUXn)
 + [Cheat sheet](http://goo.gl/942WZ8)
-+ [Use svn from git](http://goo.gl/1HhWKL)
-+ [Commands git vs svn](http://goo.gl/AE1STW)
++ [Git Visual Cheat sheet](http://ndpsoftware.com/git-cheatsheet.html)

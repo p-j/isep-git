@@ -1,0 +1,484 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>html { font-size: 100%; overflow-y: scroll; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+body{
+  color:#444;
+  font-family:Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman',
+              "Hiragino Sans GB", "STXihei", "微软雅黑", serif;
+  font-size:12px;
+  line-height:1.5em;
+  background:#fefefe;
+  width: 45em;
+  margin: 10px auto;
+  padding: 1em;
+  outline: 1300px solid #FAFAFA;
+}
+
+a{ color: #0645ad; text-decoration:none;}
+a:visited{ color: #0b0080; }
+a:hover{ color: #06e; }
+a:active{ color:#faa700; }
+a:focus{ outline: thin dotted; }
+a:hover, a:active{ outline: 0; }
+
+span.backtick {
+  border:1px solid #EAEAEA;
+  border-radius:3px;
+  background:#F8F8F8;
+  padding:0 3px 0 3px;
+}
+
+::-moz-selection{background:rgba(255,255,0,0.3);color:#000}
+::selection{background:rgba(255,255,0,0.3);color:#000}
+
+a::-moz-selection{background:rgba(255,255,0,0.3);color:#0645ad}
+a::selection{background:rgba(255,255,0,0.3);color:#0645ad}
+
+p{
+margin:1em 0;
+}
+
+img{
+max-width:100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+font-weight:normal;
+color:#111;
+line-height:1em;
+}
+h4,h5,h6{ font-weight: bold; }
+h1{ font-size:2.5em; }
+h2{ font-size:2em; border-bottom:1px solid silver; padding-bottom: 5px; }
+h3{ font-size:1.5em; }
+h4{ font-size:1.2em; }
+h5{ font-size:1em; }
+h6{ font-size:0.9em; }
+
+blockquote{
+color:#666666;
+margin:0;
+padding-left: 3em;
+border-left: 0.5em #EEE solid;
+}
+hr { display: block; height: 2px; border: 0; border-top: 1px solid #aaa;border-bottom: 1px solid #eee; margin: 1em 0; padding: 0; }
+
+
+pre , code, kbd, samp { 
+  color: #000; 
+  font-family: monospace; 
+  font-size: 0.88em; 
+  border-radius:3px;
+  background-color: #F8F8F8;
+  border: 1px solid #CCC; 
+}
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 5px 12px;}
+pre code { border: 0px !important; padding: 0;}
+code { padding: 0 3px 0 3px; }
+
+b, strong { font-weight: bold; }
+
+dfn { font-style: italic; }
+
+ins { background: #ff9; color: #000; text-decoration: none; }
+
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+ul, ol { margin: 1em 0; padding: 0 0 0 2em; }
+li p:last-child { margin:0 }
+dd { margin: 0 0 0 2em; }
+
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+@media only screen and (min-width: 480px) {
+body{font-size:14px;}
+}
+
+@media only screen and (min-width: 768px) {
+body{font-size:16px;}
+}
+
+@media print {
+  * { background: transparent !important; color: black !important; filter:none !important; -ms-filter: none !important; }
+  body{font-size:12pt; max-width:100%; outline:none;}
+  a, a:visited { text-decoration: underline; }
+  hr { height: 1px; border:0; border-bottom:1px solid black; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }
+  pre, blockquote { border: 1px solid #999; padding-right: 1em; page-break-inside: avoid; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page :left { margin: 15mm 20mm 15mm 10mm; }
+  @page :right { margin: 15mm 10mm 15mm 20mm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+</style><title>slides</title></head><body><h1 id="comprendre">Comprendre</h1>
+<p><img alt="git" src="http://git-scm.com/images/logos/downloads/Git-Logo-2Color.png" title="git" /></p>
+<h2 id="concepts-de-base">Concepts de base</h2>
+<ul>
+<li>Décentralisé</li>
+<li>Rapide</li>
+<li>Flexible</li>
+</ul>
+<h2 id="decentralise">Décentralisé</h2>
+<p><img alt="schema decentralisé" src="http://git-scm.com/figures/18333fig0103-tn.png" title="schema VCS décentralisé" /></p>
+<p>(git, mercurial, bazaar, bitkeeper, darcs)</p>
+<h3 id="avantages">Avantages</h3>
+<ul>
+<li>Chaque <code>clone</code> est un <code>fork</code></li>
+<li>Chaque <code>clone</code> est un backup</li>
+<li>Possibilité de versionner hors ligne</li>
+<li><strong>Très</strong> rapide</li>
+</ul>
+<hr />
+<h3 id="inconvenients">Inconvénients</h3>
+<ul>
+<li>Pas très performant pour les gros fichiers binaires</li>
+</ul>
+<h2 id="objectif-de-git">Objectif de git</h2>
+<ul>
+<li>Rapidité</li>
+<li>Simplicité</li>
+<li>Prise en charge de milliers de branches parallèles</li>
+<li>Architecture distribuée</li>
+<li>Capable de gerer efficacement de gros projet <em>(ex:Le noyau Linux)</em></li>
+<li>Garantir l'intégrité</li>
+</ul>
+<h2 id="les-trois-etats">Les trois états</h2>
+<p><img alt="schema 3 states" src="http://git-scm.com/figures/18333fig0106-tn.png" title="schema 3 states" /></p>
+<p>Note:
+Cette notion est primordiale pour la compréhension de la suite.
+Git gère trois états dans lesquels les fichiers peuvent résider : validé, modifié et indexé. </p>
+<ul>
+<li>Validé signifie que les données sont stockées en sécurité dans votre base de données locale. </li>
+<li>Modifié signifie que vous avez modifié le fichier mais qu'il n'a pas encore été validé en base. </li>
+<li>Indexé signifie que vous avez marqué un fichier modifié dans sa version actuelle pour qu'il fasse partie du prochain instantané du projet.</li>
+</ul>
+<p>Ceci nous mène aux trois sections principales d'un projet Git : le répertoire Git, le répertoire de travail et la zone d'index.</p>
+<h2 id="le-dossier-git">Le dossier git</h2>
+<p><img alt="git directory" src="file:///home/jeremie/workspace/isep/isep-git/data/images/git-directory.png" title="git directory" /></p>
+<p>Note:
+Le répertoire Git est l'endroit où Git stocke les méta-données et la base de données des objets de votre projet. C'est la partie la plus importante de Git, et c'est ce qui est copié lorsque vous clonez un dépôt depuis un autre ordinateur.</p>
+<p>Le répertoire de travail est une extraction unique d'une version du projet. Ces fichiers sont extraits depuis la base de données compressée dans le répertoire Git et placés sur le disque pour pouvoir être utilisés ou modifiés.</p>
+<p>La zone d'index est un simple fichier, généralement situé dans le répertoire Git, qui stocke les informations concernant ce qui fera partie du prochain instantané.</p>
+<h2 id="utilisation-standard">Utilisation standard</h2>
+<p><img alt="schema file lifecycle" src="http://git-scm.com/figures/18333fig0201-tn.png" title="schema file lifecycle" /></p>
+<ol>
+<li>Modifier des fichiers dans l'espace de travail</li>
+<li>Indexer les fichiers modifiés</li>
+<li>Valider les changements</li>
+</ol>
+<p>Note:
+L'utilisation standard de Git se passe comme suit :</p>
+<ul>
+<li>vous modifiez des fichiers dans votre répertoire de travail ;</li>
+<li>vous indexez les fichiers modifiés, ce qui ajoute des instantanés de ces fichiers dans la zone d'index ;</li>
+<li>vous validez, ce qui a pour effet de basculer les instantanés des fichiers de l'index dans la base de données du répertoire Git.</li>
+</ul>
+<p>Si une version particulière d'un fichier est dans le répertoire Git, il est considéré comme <strong>validé</strong>. </p>
+<p>S'il est modifié mais a été ajouté dans la zone d'index, il est <strong>indexé</strong>. </p>
+<p>S'il a été modifié depuis le dernier instantané mais n'a pas été indexé, il est <strong>modifié</strong>.</p>
+<h2 id="installer-git">Installer git</h2>
+<p><img alt="one does not simply install git on windows" src="http://i.qkme.me/35nf3j.jpg" title="one does not simply install git on windows" /></p>
+<h3 id="officiel">Officiel</h3>
+<p>http://git-scm.com/downloads</p>
+<h3 id="windows">Windows</h3>
+<p>http://msysgit.github.io/</p>
+<h3 id="linux">LINUX</h3>
+<ul>
+<li>Debian: <code>aptitude install git</code></li>
+<li>Ubuntu: <code>sudo apt-get install git</code></li>
+<li>ArchLinux: <code>pacman -S git</code></li>
+</ul>
+<h3 id="os-x">OS X</h3>
+<p>Avec <a href="http://brew.sh/">Homebrew</a>
+<code>brew install git</code></p>
+<h2 id="configuration">Configuration</h2>
+<h3 id="identite">Identité</h3>
+<pre><code>$ git config --global user.name &quot;John Doe&quot;
+$ git config --global user.email johndoe@example.com
+</code></pre>
+
+<h3 id="couleur">Couleur</h3>
+<pre><code>$ git config --global color.ui true
+</code></pre>
+
+<h2 id="commandes-de-base">Commandes de base</h2>
+<h3 id="laide-dans-git">L'aide dans git</h3>
+<pre><code>$ git --help
+$ git add --help
+$ git &lt;sub-command&gt; --help
+</code></pre>
+
+<h3 id="creer-un-depot-local">Créer un dépôt local</h3>
+<p><code>$ git init</code></p>
+<h3 id="cloner-un-depot-existant">Cloner un dépôt existant</h3>
+<pre><code>$ git clone https://github.com/p-j/isep-git.git
+</code></pre>
+
+<h3 id="creer-un-instantane">Créer un instantané</h3>
+<h4 id="changements-specifiques">Changements spécifiques:</h4>
+<pre><code>$ git add *.html
+$ git add README.md
+$ git commit -m 'First commit'
+</code></pre>
+
+<h4 id="tous-les-changements">Tous les changements:</h4>
+<pre><code>$ git commit -am 'First commit'
+</code></pre>
+
+<h3 id="enlever-un-fichier">Enlever un fichier</h3>
+<h4 id="de-lindex">De l'index</h4>
+<pre><code>$ git rm --cached file.html
+</code></pre>
+
+<h4 id="de-lindex-et-du-disque-dur">De l'index et du disque dur</h4>
+<pre><code>$ git rm file.html
+</code></pre>
+
+<h3 id="deplacer-des-fichiers">Déplacer des fichiers</h3>
+<p>Bien que git ne se préocuppe que du contenue, il y a une commade pour déplacer des fichiers.</p>
+<pre><code>$ git mv file1 file2
+</code></pre>
+
+<p>Qui est l'équivalent de </p>
+<pre><code>$ mv file1 file2
+$ git rm file1
+$ git add file2
+</code></pre>
+
+<h3 id="connaitre-le-status-du-depot">Connaitre le status du dépôt</h3>
+<pre><code>$ git status
+</code></pre>
+
+<h3 id="voir-lhistorique-du-depot">Voir l'historique du dépôt</h3>
+<h4 id="complet">Complet</h4>
+<pre><code>$ git log
+</code></pre>
+
+<h4 id="filtrer-par-date">Filtrer par date</h4>
+<pre><code>$ git log --since=2.weeks
+$ git log --since=&quot;2 years 1 day 3 minutes ago&quot;
+</code></pre>
+
+<h4 id="format-court-avec-graphique">Format court avec graphique</h4>
+<pre><code>$ git log --pretty=oneline --decorate --graph
+</code></pre>
+
+<h3 id="voir-les-differences">Voir les différences</h3>
+<h4 id="les-fichiers-modifies">Les fichiers modifiés</h4>
+<pre><code>$ git diff
+</code></pre>
+
+<h5 id="les-fichiers-indexes">Les fichiers indexés</h5>
+<pre><code>$ git  diff --cached
+</code></pre>
+
+<h4 id="par-rapport-a-une-version-specifique">Par rapport a une version spécifique</h4>
+<pre><code>$ git diff 7be56a
+git diff HEAD^
+</code></pre>
+
+<h3 id="voir-les-commits">Voir les commits</h3>
+<h4 id="le-dernier-commit">Le dernier commit</h4>
+<pre><code>$ git show
+</code></pre>
+
+<h4 id="un-commit-specifique">Un commit spécifique</h4>
+<pre><code>$ git show 7be56a
+git show HEAD^
+</code></pre>
+
+<h3 id="revenir-en-arriere">Revenir en arrière</h3>
+<h4 id="modifier-le-dernier-commit">Modifier le dernier commit</h4>
+<pre><code>$ git commit --amend
+</code></pre>
+
+<h4 id="desindexer-un-fichier">Désindexer un fichier</h4>
+<pre><code>$ git reset HEAD file.html
+</code></pre>
+
+<h4 id="annuler-les-modifications-dun-fichier-modifier">Annuler les modifications d'un fichier modifier</h4>
+<pre><code>$ git checkout -- file.html
+</code></pre>
+
+<h4 id="annuler-un-commit">Annuler un commit</h4>
+<pre><code>$ git revert 7be56a
+</code></pre>
+
+<h3 id="creer-des-tags">Créer des tags</h3>
+<h4 id="tags-leger">Tags léger</h4>
+<pre><code>$ git tag v0.1.0
+</code></pre>
+
+<h4 id="tags-annotes">Tags annotés</h4>
+<pre><code>$ git tag -a v0.1.0 -m 'Version 0.1.0'
+</code></pre>
+
+<p>Note:
+Un tag est simplement un commit avec un nom un peu plus sympa qu'un hash. On s'en sert pour marquer des versions stable ou des points important dans le développement qui serviront de références.</p>
+<h2 id="gitignore">.gitignore</h2>
+<pre><code>$ cat .gitignore 
+.DS_Store
+.svn
+log/*.log
+tmp/**
+node_modules/
+</code></pre>
+
+<ul>
+<li>Les lignes vides ou démarrant par un <code>#</code> sont ignorées</li>
+<li>Il est possible d'utiliser des jokers standards</li>
+<li>Terminer un modèle par un slash <code>/</code> pour spécifier un dossier</li>
+<li>Inverser un modèle avec un point d'exclamation <code>!</code></li>
+</ul>
+<h2 id="remotes">Remotes</h2>
+<ul>
+<li>Autre clones du même dépôt</li>
+<li>Peut être local (un autre <code>checkout</code>) ou distant (collègue, serveur central)</li>
+<li>On peut configurer une valeur par défaut pour <code>push</code> et <code>pull</code></li>
+</ul>
+<pre><code>$ git remote -v
+origin  git@github.com:p-j/isep-fsnp.git (fetch)
+origin  git@github.com:p-j/isep-fsnp.git (push)
+</code></pre>
+
+<h3 id="push-to-remote">Push to remote</h3>
+<h4 id="sans-valeur-par-defaut">Sans valeur par défaut</h4>
+<pre><code>$ git push &lt;remote&gt; &lt;rbranch&gt;
+</code></pre>
+
+<h4 id="configurer-une-valeur-par-defaut">Configurer une valeur par défaut</h4>
+<pre><code>$ git push -u &lt;remote&gt; &lt;rbranch&gt;
+</code></pre>
+
+<h4 id="puis">Puis</h4>
+<pre><code>$ git push 
+</code></pre>
+
+<h3 id="pull-from-remote">Pull from remote</h3>
+<h4 id="fetch-merge">FETCH &amp; MERGE</h4>
+<pre><code>$ git pull  [&lt;remote&gt; &lt;rbranch&gt;]
+</code></pre>
+
+<p>Equivalent de</p>
+<pre><code>$ git fetch &lt;remote&gt;
+$ git merge &lt;rbranch&gt;
+</code></pre>
+
+<h2 id="branches">Branches</h2>
+<p>Les branches sont des "pointeurs" vers des commits.
+<img alt="schema branch 1" src="http://git-scm.com/figures/18333fig0308-tn.png" title="schema branch 1" /></p>
+<h3 id="branches-divergentes">Branches divergentes</h3>
+<p><img alt="schema branches divergentes" src="http://git-scm.com/figures/18333fig0309-tn.png" title="schema branches divergentes" /></p>
+<h3 id="fusionner-des-branches">Fusionner des branches</h3>
+<p><img alt="schema fusion de branches" src="http://git-scm.com/figures/18333fig0317-tn.png" title="schema fusion branches" /></p>
+<h3 id="conflits-lors-de-la-fusion">Conflits lors de la fusion</h3>
+<ul>
+<li>Il y a plusieurs stratégie de fusion automatique
+(fast-forward, 3 way, etc...) </li>
+<li>Si ça ne fonctionne pas, il faut le faire à la main</li>
+</ul>
+<pre><code>$ git merge iss53
+Auto-merging index.html
+CONFLICT (content): Merge conflict in index.html
+Automatic merge failed; fix conflicts and then commit the result.
+</code></pre>
+
+<ul>
+<li>Ensuite, il faut le marquer comme résolue et finaliser le commit</li>
+</ul>
+<pre><code>$ git add index.html
+$ git commit
+</code></pre>
+
+<h3 id="en-general-ca-marche-sans-probleme">En général ça marche sans problème</h3>
+<p><img alt="branch merged successful" src="http://memecrunch.com/meme/2KBX/git-branch-success/image.png" title="branch merged successful" /></p>
+<h3 id="gestion-des-branches">Gestion des branches</h3>
+<h4 id="creer-une-branche">Créer une branche</h4>
+<pre><code>$ git branch iss53
+</code></pre>
+
+<pre><code>$ git checkout -b iss53 master
+</code></pre>
+
+<h4 id="changer-de-branche">Changer de branche</h4>
+<pre><code>$ git checkout iss53
+</code></pre>
+
+<h4 id="supprimer-une-branche">Supprimer une branche</h4>
+<pre><code>$ git branch -d iss53
+</code></pre>
+
+<h4 id="voire-toutes-les-branches">Voire toutes les branches</h4>
+<pre><code>$ git branch
+  iss53
+* master
+  testing
+</code></pre>
+
+<h4 id="voire-le-dernier-commit-sur-chaque-branches">Voire le dernier commit sur chaque branches</h4>
+<pre><code>$ git branch -v
+  iss53 93b412c fix javascript issue
+* master 7a98805 Merge branch 'iss53'
+  testing 782fd34 add scott to the author list in the readmes
+</code></pre>
+
+<h4 id="lister-les-branches-fusionnees">Lister les branches fusionnées</h4>
+<pre><code>$ git branch --merged
+  iss53
+* master
+</code></pre>
+
+<h4 id="lister-les-branches-non-fusionnees">Lister les branches non fusionnées</h4>
+<pre><code>$ git branch --no-merged
+  testing
+</code></pre>
+
+<h2 id="stashing">Stashing</h2>
+<pre><code>$ git stash
+$ git stash pop
+$ git stash list
+$ git stash apply
+$ git stash drop
+$ git stash clear
+</code></pre>
+
+<p>Note: 
+Utilisez git stash quand vous voulez enregistrer l'état actuel du répertoire de travail et de l'index, et revenir à un répertoire de travail propre. La commande enregistre vos modifications locales à part et mets à jour le répertoire de travail pour correspondre à la HEAD.</p>
+<p>Les modifications mise de côté par cette commande peuvent être listés avec <code>git stash list</code>, inspecté avec <code>git stash show</code>, et restauré (potentiellement par dessus ​​un autre commit) avec <code>git stash apply</code>. <code>git stash</code> sans aucun argument équivaut à <code>git stash save</code>. Une <code>stash</code> est par défaut répertorié comme «WIP sur branchname ...», mais vous pouvez donner un message plus explicite via la ligne de commande lorsque vous en créez un.</p>
+<h2 id="workflow-courrant">Workflow courrant</h2>
+<p><img alt="schema common workflow" src="http://git-scm.com/figures/18333fig0319-tn.png" title="schema common workflow" /></p>
+<h2 id="master-comme-branche-stable">Master comme branche stable</h2>
+<ul>
+<li>On ne commit dans master que du code stable</li>
+<li>On commit le code instable dans une branche de développement</li>
+<li>On déploie des patchs sur master</li>
+<li>On merge les patchs dans la branche de développement</li>
+</ul>
+<h2 id="master-comme-branche-de-developpement">Master comme branche de développement</h2>
+<ul>
+<li>On commit le code instable dans master</li>
+<li>On créer des tags pour marquer les étapes stables</li>
+<li>On créer une branche à partir d'un tag pour les patchs</li>
+<li>On merge les patchs dans master</li>
+</ul>
+<h2 id="et-maintenant">Et maintenant ?</h2>
+<p><img alt="git all the things" src="http://memecrunch.com/meme/1BZ/git/image.png" title="git all the things" /></p>
+<h2 id="resources">Resources</h2>
+<p>Très inspiré de <a href="http://blog.dbrgn.ch/2013/2/7/git-introduction-presentation-slides/">cette présentation</a> de <a href="http://blog.dbrgn.ch/about/">Danilo Bargen</a></p>
+<ul>
+<li><a href="http://goo.gl/jX95vy">"Pro Git" Book</a></li>
+<li><a href="http://goo.gl/eJODp8">Git reference</a></li>
+<li><a href="http://goo.gl/mJJUXn">Github git challenges</a></li>
+<li><a href="http://goo.gl/942WZ8">Cheat sheet</a></li>
+<li><a href="">Git Visual Cheat sheet</a></li>
+</ul></body></html>
