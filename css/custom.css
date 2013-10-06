@@ -1,0 +1,31 @@
+.align-left {
+	text-align: left;
+}
+
+.align-right {
+	text-align: right;
+}
+
+.reveal section img[alt="git"] {
+	border: none;
+	box-shadow: none;
+	background: none;
+}
+
+.reveal section pre,
+.reveal section code {
+	font-family: "Source Code Pro" monospace;
+	background: rgba(200, 200, 200, 0.5);
+	border: 1px solid rgb(200, 200, 200);
+	padding: 0 5px;
+	border-radius: 4px;
+	line-height: 1.5em;
+}
+
+.reveal section pre code {
+	background: transparent;
+	border: none;
+	padding: 0;
+	border-radius: 0;
+	font-size: 1.5em;
+}
