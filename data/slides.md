@@ -8,6 +8,9 @@
 + Rapide
 + Flexible
 
+Note:
+Inspiré par BitKeeper et créé en 2005 pour le remplacer après que la gratuité de ce dernier soit révoqué.
+
 
 
 ## Décentralisé
@@ -27,6 +30,9 @@
 ### Inconvénients
 + Pas très performant pour les gros fichiers binaires
 
+Note:
+Chaque clone est un backup : a condition de maintenir a jour toutes les branches.
+
 
 
 ## Objectif de git
@@ -36,6 +42,10 @@
 + Architecture distribuée
 + Capable de gerer efficacement de gros projet *(ex:Le noyau Linux)*
 + Garantir l'intégrité
+
+Note:
++ Git est rapide car presque toutes les opérations sont locale.
++ Git gère l'intégrité en utilisant des somme de contrôle (checksum ou hash) qui servent ensuite de référence.
 
 
 
@@ -97,6 +107,9 @@ S'il a été modifié depuis le dernier instantané mais n'a pas été indexé, 
 ### Officiel
 http://git-scm.com/downloads
 
+Note:
+Binaire, installeur et source pour Windows, OS X, Linux, Solaris
+
 
 ### Windows
 http://msysgit.github.io/
@@ -111,6 +124,13 @@ http://msysgit.github.io/
 ### OS X
 Avec [Homebrew](http://brew.sh/)
 `brew install git`
+
+
+![Y U NO GUI](http://cdn.meme.li/i/jqjn1.jpg "command line all Y U NO GUI")
+
+
+### Interface graphique ?
+http://git-scm.com/downloads/guis
 
 
 
@@ -128,6 +148,9 @@ $ git config --global user.email johndoe@example.com
 ```
 $ git config --global color.ui true
 ```
+
+
+![bravo](http://i.imgur.com/v06N8.gif "bravo")
 
 
 
@@ -164,6 +187,9 @@ $ git commit -am 'First commit'
 ```
 
 
+# To be continued...
+
+
 ### Enlever un fichier
 #### De l'index
 ```
@@ -176,7 +202,7 @@ $ git rm file.html
 
 
 ### Déplacer des fichiers
-Bien que git ne se préocuppe que du contenue, il y a une commade pour déplacer des fichiers.
+Bien que git ne se préocuppe que du contenu, il y a une commade pour déplacer des fichiers.
 ```
 $ git mv file1 file2
 ```
