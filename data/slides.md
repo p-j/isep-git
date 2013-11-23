@@ -125,6 +125,16 @@ http://msysgit.github.io/
 Avec [Homebrew](http://brew.sh/)
 `brew install git`
 
+Note:
+Ok mais a quoi ça ressemble ?
+
+
+### >_
+![Git CLI](images/git-cli.png "Command Line Interface")
+
+Note:
+Not funny you say ?!
+
 
 ![Y U NO GUI](http://cdn.meme.li/i/jqjn1.jpg "command line all Y U NO GUI")
 
@@ -132,9 +142,19 @@ Avec [Homebrew](http://brew.sh/)
 ### Interface graphique ?
 http://git-scm.com/downloads/guis
 
+Note:
+Des interface graphique existe... Vous pouvez les trouver la. 
+À vous de choisir celle qui vous convient.
+Recommandé : 
+
+- SmartGit (crossplatform, gratuit pour usage personnel)
+- SourceTree (sous mac, le plus populaire)
+- GitHub for Mac / Windows (attention : spécifique à GitHub)
+
 
 
 ## Configuration
+http://git-scm.com/book/fr/Personnalisation-de-Git-Configuration-de-Git
 
 
 ### Identité
@@ -152,6 +172,9 @@ $ git config --global color.ui true
 
 ![bravo](http://i.imgur.com/v06N8.gif "bravo")
 
+Note: 
+Et voilà, `git` est pret !
+
 
 
 ## Commandes de base
@@ -164,6 +187,7 @@ $ git add --help
 $ git <sub-command> --help
 ```
 
+
 ### Créer un dépôt local
 `$ git init`
 
@@ -172,6 +196,20 @@ $ git <sub-command> --help
 ```
 $ git clone https://github.com/p-j/isep-git.git
 ```
+
+Note:
+Par défaut, cela créera un dossier `isep-git` à l'endroit où vous avez executé la commande.
+Ce dossier contiendra votre copie du dépôt.
+
+
+### Récupérer le dépôt complet
+```
+$ git clone https://github.com/p-j/isep-git.git
+$ git fetch --all
+```
+
+Note:
+Permet de récupérer toutes les branches et pas uniquement la branche courrante (ie: `master` par défaut)
 
 
 ### Créer un instantané 
@@ -187,7 +225,15 @@ $ git commit -am 'First commit'
 ```
 
 
+### Connaitre le status du dépôt
+```
+$ git status
+```
+
+
+
 # To be continued...
+
 
 
 ### Enlever un fichier
@@ -211,12 +257,6 @@ Qui est l'équivalent de
 $ mv file1 file2
 $ git rm file1
 $ git add file2
-```
-
-
-### Connaitre le status du dépôt
-```
-$ git status
 ```
 
 
