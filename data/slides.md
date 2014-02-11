@@ -542,4 +542,4 @@ Très inspiré de [cette présentation](http://blog.dbrgn.ch/2013/2/7/git-introd
 | ------- | ----------------------------------------------------- | 
 | Email   | [jparker@isep.fr](jparker@isep.fr)                    | 
 | Twitter | [@jeremie_parker](https://twitter.com/jeremie_parker) | 
-| GitHub  | [p-j/isep-fsnp](https://github.com/p-j/isep-fsnp)     | 
+| GitHub  | [p-j/isep-git](https://github.com/p-j/isep-git)       | 
