@@ -531,3 +531,15 @@ Très inspiré de [cette présentation](http://blog.dbrgn.ch/2013/2/7/git-introd
 + [Github git challenges](http://goo.gl/mJJUXn)
 + [Cheat sheet](http://goo.gl/942WZ8)
 + [Git Visual Cheat sheet](http://ndpsoftware.com/git-cheatsheet.html)
+
+
+
+## Questions ?
+
+---
+
+|         |                                                       | 
+| ------- | ----------------------------------------------------- | 
+| Email   | [jparker@isep.fr](jparker@isep.fr)                    | 
+| Twitter | [@jeremie_parker](https://twitter.com/jeremie_parker) | 
+| GitHub  | [p-j/isep-fsnp](https://github.com/p-j/isep-fsnp)     | 
